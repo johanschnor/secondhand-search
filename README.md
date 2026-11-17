@@ -35,9 +35,6 @@ De tre bruger officielle API'er, der kræver nøgler. I stedet for at lægge nø
 
 Har du dine egne nøgler, kan du indsætte dem i `.env` (se `.env.example`). Så bruges de lokalt, og relayen springes over. Sæt `RELAY_URL=off` for at slå relayen helt fra.
 
-### Hosting af relayen (kun for projektets ejer)
-
-Deploy mappen på fx Render med `npm install` som build- og `npm run relay` som start-kommando, og sæt `EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`, `TRADERA_APP_ID`, `TRADERA_APP_KEY` og `CONSTRUCTOR_KEY` som miljøvariabler. Indsæt derefter relayens URL i `DEFAULT_RELAY_URL` i `server.js`. Relayen begrænser hver IP til 60 forespørgsler i minuttet (`RELAY_RATE_LIMIT`).
 
 ## Test
 
