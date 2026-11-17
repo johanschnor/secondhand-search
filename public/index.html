@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secondhand-søgning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <a href="/" class="brand">SECONDHAND</a>
+    <span class="tag">Lokal secondhand-søgning · din egen IP</span>
+  </header>
+
+  <main>
+    <form id="search-form" class="search" autocomplete="off">
+      <input id="q" name="q" type="search" placeholder="Søg på tværs af secondhand-sider…" aria-label="Søgeord" autofocus />
+      <button type="submit">Søg</button>
+    </form>
+
+    <section class="controls">
+      <div class="platforms" id="platforms" aria-label="Platforme"></div>
+      <div class="filters">
+        <label>Køn
+          <select id="kon">
+            <option value="">Alle</option>
+            <option value="Men">Mænd</option>
+            <option value="Female">Kvinder</option>
+          </select>
+        </label>
+        <label>Kategori
+          <select id="kategori"><option value="">Auto</option></select>
+        </label>
+        <label>Størrelse
+          <select id="size"><option value="">Alle</option></select>
+        </label>
+        <label>Pris (DKK)
+          <input id="price-min" type="number" min="0" placeholder="Fra" inputmode="numeric" />
+          <input id="price-max" type="number" min="0" placeholder="Til" inputmode="numeric" />
+        </label>
+        <label>Sortér
+          <select id="sort">
+            <option value="mixed">Blandet</option>
+            <option value="price_asc">Pris: lav → høj</option>
+            <option value="price_desc">Pris: høj → lav</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <div id="status" class="status" aria-live="polite"></div>
+    <div id="results" class="grid"></div>
+    <div class="more-wrap"><button id="more" class="more" hidden>Hent flere</button></div>
+  </main>
+
+  <footer class="foot">
+    Kører lokalt på din computer. Opslag sendes direkte fra din egen forbindelse til de enkelte sider – intet går gennem en central server.
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
